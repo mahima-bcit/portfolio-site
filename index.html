@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Mahima Sharma — Full-stack software engineer based in Vancouver. Backend-strong with Java, C#, and React." />
+<meta name="theme-color" content="#f7f4ed" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1a1815" media="(prefers-color-scheme: dark)" />
+<title>Mahima Sharma — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+<style>
+  :root {
+    --bg: #f7f4ed;
+    --bg-card: #ffffff;
+    --bg-subtle: #f0ebe0;
+    --ink: #1a1815;
+    --ink-soft: #5c5852;
+    --ink-faint: #8a857d;
+    --rule: #e6e1d6;
+    --rule-strong: #d4cdbb;
+    --accent: #b8451f;
+    --accent-bg: #faf0e6;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Geist', -apple-system, sans-serif;
+    --mono: 'Geist Mono', ui-monospace, monospace;
+    --max-width: 720px;
+    --shadow-soft: 0 1px 2px rgba(26, 24, 21, 0.04);
+  }
+
+  [data-theme="dark"] {
+    --bg: #161412;
+    --bg-card: #1f1c19;
+    --bg-subtle: #211e1a;
+    --ink: #f0ece3;
+    --ink-soft: #a8a298;
+    --ink-faint: #6b665e;
+    --rule: #2e2a25;
+    --rule-strong: #3a352f;
+    --accent: #e8835e;
+    --accent-bg: #2a1f17;
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background 0.4s ease, color 0.4s ease;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' /></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.4'/></svg>");
+    opacity: 0.04;
+    z-index: 0;
+    mix-blend-mode: multiply;
+  }
+
+  [data-theme="dark"] body::before { opacity: 0.06; mix-blend-mode: screen; }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .controls {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    background: var(--bg-card);
+    color: var(--ink-soft);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .icon-btn:hover {
+    color: var(--accent);
+    border-color: var(--rule-strong);
+    transform: translateY(-1px);
+  }
+
+  .icon-btn:active { transform: translateY(0); }
+  .icon-btn svg { width: 16px; height: 16px; transition: transform 0.4s ease; }
+  .icon-btn:hover svg { transform: rotate(15deg); }
+
+  header {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s ease-out forwards;
+  }
+
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  }
+
+  .status { display: inline-flex; align-items: center; gap: 6px; }
+
+  .status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2d8659;
+    box-shadow: 0 0 0 3px rgba(45, 134, 89, 0.18);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(45, 134, 89, 0.18); }
+    50% { box-shadow: 0 0 0 5px rgba(45, 134, 89, 0.08); }
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--rule);
+    background: var(--bg-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    color: var(--ink-soft);
+    transition: border-color 0.3s ease;
+  }
+
+  .avatar:hover { border-color: var(--accent); }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    font-variation-settings: 'opsz' 144;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .intro {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 32rem;
+    margin-bottom: 2rem;
+  }
+
+  .intro strong { color: var(--ink); font-weight: 500; }
+
+  .header-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.125rem;
+    border-radius: 6px;
+    font-family: var(--sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--rule-strong);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .btn svg { width: 14px; height: 14px; transition: transform 0.2s ease; }
+  .btn-primary:hover svg { transform: translateY(2px); }
+  .btn-secondary:hover svg { transform: translateX(2px); }
+
+  .meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  section.visible { opacity: 1; transform: translateY(0); }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .section-label .count {
+    font-feature-settings: 'tnum';
+    color: var(--ink-faint);
+  }
+
+  .about p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    max-width: 36rem;
+  }
+
+  .about p:last-child { margin-bottom: 0; }
+  .about strong { color: var(--ink); font-weight: 500; }
+
+  /* Core stack icon grid */
+  .core-stack {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: var(--bg-subtle);
+    border-radius: 10px;
+    border: 1px solid var(--rule);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .core-stack-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    flex-basis: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+  .stack-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    transition: transform 0.2s ease;
+  }
+
+  .stack-icon:hover { transform: translateY(-2px); }
+
+  .stack-icon i {
+    font-size: 32px;
+    color: var(--ink);
+    transition: color 0.2s ease;
+  }
+
+  .stack-icon span {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+
+  /* Projects */
+  .project {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    transition: padding 0.3s ease;
+  }
+
+  .project::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 1.75rem;
+    bottom: 1.75rem;
+    width: 2px;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project:hover { padding-left: 1rem; }
+  .project:hover::before { opacity: 1; }
+  .project:last-child { border-bottom: none; }
+
+  .project-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .project-title .chevron {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+  }
+
+  .project.expanded .chevron { transform: rotate(180deg); }
+
+  .project-year {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+
+  .project-desc {
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    max-width: 38rem;
+  }
+
+  .project-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    background: transparent;
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .project:hover .tag { border-color: var(--rule-strong); }
+
+  /* Expandable detail panel */
+  .project-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, margin-top 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .project.expanded .project-detail {
+    max-height: 2000px;
+    margin-top: 1.5rem;
+    opacity: 1;
+  }
+
+  .detail-inner {
+    padding: 1.25rem 0 0.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .detail-block {
+    margin-bottom: 1.25rem;
+  }
+
+  .detail-block:last-child { margin-bottom: 0.5rem; }
+
+  .detail-block h4 {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  .detail-block p {
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    max-width: 38rem;
+  }
+
+  .detail-block ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .detail-block li {
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    padding-left: 1.25rem;
+    position: relative;
+    max-width: 38rem;
+  }
+
+  .detail-block li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .project-links a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .project-links a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .project-links a::after {
+    content: ' →';
+    transition: margin-left 0.2s;
+  }
+
+  .project-links a:hover::after { margin-left: 4px; }
+
+  /* Experience */
+  .experience {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .experience:last-of-type { border-bottom: none; }
+
+  .exp-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+  }
+
+  .exp-role span { color: var(--ink-soft); font-style: italic; }
+
+  .exp-dates {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+
+  .exp-desc {
+    color: var(--ink-soft);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    max-width: 38rem;
+    margin-top: 0.25rem;
+  }
+
+  .exp-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: 400;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem 2rem;
+  }
+
+  .skill-group h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  .skill-group p {
+    color: var(--ink);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  /* Contact */
+  .contact-card {
+    background: var(--bg-subtle);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--rule);
+  }
+
+  .contact-card h2 {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .contact-card p {
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.125rem;
+    border-radius: 6px;
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .contact-link svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 6rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+
+  footer .links { display: flex; gap: 1.5rem; }
+
+  footer a {
+    color: var(--ink);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--accent); }
+
+  .ornament {
+    text-align: center;
+    color: var(--ink-faint);
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    margin: 3rem 0;
+    letter-spacing: 0.5rem;
+    font-style: italic;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  .project-summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    .status::before { animation: none; }
+    section { opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 2.5rem 1.25rem 4rem; }
+    header { margin-bottom: 3.5rem; }
+    section { margin-bottom: 3rem; }
+    .exp-stats { gap: 1.5rem; }
+    .controls { top: 1rem; right: 1rem; }
+    .project::before { left: -0.5rem; }
+    .project:hover { padding-left: 0.5rem; }
+    .core-stack { gap: 1rem; padding: 1rem; }
+    .stack-icon i { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+    </svg>
+  </button>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="top-row">
+      <span>Mahima Sharma</span>
+      <span class="status">Open to opportunities</span>
+    </div>
+
+    <div class="avatar" id="avatar">
+      <img src="profile.jpg" alt="Mahima Sharma" onerror="this.style.display='none'; this.parentElement.textContent='MS';" />
+    </div>
+
+    <h1>Full-stack engineer with a <em>backend bias</em>.</h1>
+
+    <p class="intro">
+      Hi, I'm Mahima. I build production-grade web applications across <strong>Java</strong>, <strong>C# / .NET</strong>, and <strong>React</strong>. Three and a half years of enterprise software at Accenture, recent BCIT training in modern full-stack development.
+    </p>
+
+    <div class="header-actions">
+      <a href="Mahima_Sharma_Resume.pdf" download class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download Resume
+      </a>
+      <a href="#contact" class="btn btn-secondary">
+        Get in touch
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <div class="meta">
+      <span>Vancouver, BC</span>
+      <span>·</span>
+      <span>sharmamahima174@gmail.com</span>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="section-label">
+      <span>About</span>
+      <span class="count">01</span>
+    </div>
+    <p>
+      I started my career at <strong>Accenture</strong> in 2020, where I spent three and a half years maintaining Spring Batch and Spring MVC applications across distributed systems — the kind of long-running enterprise software where every commit matters and uptime is measured in nines.
+    </p>
+    <p>
+      After moving to Canada, I completed <strong>BCIT's Software Systems Developer</strong> program in May 2026 to round out my full-stack toolkit. Estimated 95% GPA, led a team of five on a counsellor booking platform, and partnered directly with an industry client to ship a financial literacy app.
+    </p>
+    <p>
+      What I care about: clean architecture, code that ages well, and shipping things that actually solve real problems. Currently exploring AI/ML as my next growth area.
+    </p>
+
+    <div class="core-stack">
+      <span class="core-stack-label">Core stack</span>
+      <div class="stack-icon">
+        <i class="devicon-java-plain"></i>
+        <span>Java</span>
+      </div>
+      <div class="stack-icon">
+        <i class="devicon-csharp-plain"></i>
+        <span>C#</span>
+      </div>
+      <div class="stack-icon">
+        <i class="devicon-react-original"></i>
+        <span>React</span>
+      </div>
+      <div class="stack-icon">
+        <i class="devicon-microsoftsqlserver-plain"></i>
+        <span>SQL</span>
+      </div>
+      <div class="stack-icon">
+        <i class="devicon-docker-plain"></i>
+        <span>Docker</span>
+      </div>
+      <div class="stack-icon">
+        <i class="devicon-git-plain"></i>
+        <span>Git</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">
+      <span>Selected work</span>
+      <span class="count">02</span>
+    </div>
+
+    <article class="project" data-project="mcfl">
+      <div class="project-summary" tabindex="0" role="button" aria-expanded="false" aria-controls="mcfl-detail">
+        <div class="project-head">
+          <h2 class="project-title">
+            Money Confidence For Life
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </h2>
+          <span class="project-year">2026</span>
+        </div>
+        <p class="project-desc">
+          A youth-focused financial literacy web app built for a Canadian industry client. Scenario-based learning, goal tracking, and parental consent flows.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">ASP.NET Core Web API</span>
+          <span class="tag">SQL Server</span>
+        </div>
+      </div>
+
+      <div class="project-detail" id="mcfl-detail">
+        <div class="detail-inner">
+          <div class="detail-block">
+            <h4>The challenge</h4>
+            <p>The client needed a working prototype for youth financial education that could handle scenario-based learning, parental consent workflows, and admin analytics. With a five-week window and a team of five developers, we needed to ship a real product, not a demo.</p>
+          </div>
+          <div class="detail-block">
+            <h4>My role</h4>
+            <p>I led requirements analysis with the client, translating their feedback into backlog items, ERD updates, and API contracts. On the implementation side, I built both backend and frontend across the stack.</p>
+          </div>
+          <div class="detail-block">
+            <h4>What I built</h4>
+            <ul>
+              <li>15+ reusable React + TypeScript components for scenario-based learning flows</li>
+              <li>10+ REST API endpoints on ASP.NET Core Web API</li>
+              <li>Admin analytics dashboards with data visualization</li>
+              <li>Database schema design and seeder scripts for development environments</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h4>Key takeaways</h4>
+            <p>Direct client communication forced clarity. Every ambiguous requirement became an API contract decision, which sharpened my instinct for designing endpoints that match real user workflows rather than imagined ones.</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mahima-bcit/MCFL" target="_blank" rel="noopener">View repo</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="project" data-project="carecompass">
+      <div class="project-summary" tabindex="0" role="button" aria-expanded="false" aria-controls="carecompass-detail">
+        <div class="project-head">
+          <h2 class="project-title">
+            CareCompass
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </h2>
+          <span class="project-year">2026</span>
+        </div>
+        <p class="project-desc">
+          A web platform connecting clients with counsellors. Subscription management, payment processing, and role-based dashboards for three distinct user types.
+        </p>
+        <div class="project-tags">
+          <span class="tag">ASP.NET Core MVC</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">PayPal API</span>
+          <span class="tag">Identity</span>
+        </div>
+      </div>
+
+      <div class="project-detail" id="carecompass-detail">
+        <div class="detail-inner">
+          <div class="detail-block">
+            <h4>The challenge</h4>
+            <p>Build a production-ready counsellor booking platform from scratch, with three distinct user roles (Admin, Manager, Counsellor), real payment processing, and the kind of security a real client app demands. Four-month timeline, five developers, multiple integrations.</p>
+          </div>
+          <div class="detail-block">
+            <h4>My role</h4>
+            <p>Team lead for five developers. Introduced backlog grooming and sprint planning that kept the project on schedule, and built 10+ full-stack features end-to-end myself across backend and frontend.</p>
+          </div>
+          <div class="detail-block">
+            <h4>What I built</h4>
+            <ul>
+              <li>Layered architecture with controllers, services, and repository patterns</li>
+              <li>PayPal REST API integration for subscription payments</li>
+              <li>Brevo email delivery for transactional and notification emails</li>
+              <li>Google reCAPTCHA for bot protection on public-facing forms</li>
+              <li>ASP.NET Core Identity with email confirmation, lockout, and role-based access control</li>
+              <li>Role-specific dashboards for Admin, Manager, and Counsellor users</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h4>Key takeaways</h4>
+            <p>Leading a team meant my code wasn't just my code. Sprint planning, code review discipline, and clear ownership boundaries did more for velocity than any individual feature I shipped. The repository pattern in particular saved us when business logic shifted late in the project.</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/jzhang522/care-compass" target="_blank" rel="noopener">View repo</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <div class="section-label">
+      <span>Experience</span>
+      <span class="count">03</span>
+    </div>
+
+    <div class="experience">
+      <div class="exp-head">
+        <h2 class="exp-role">Software Engineer <span>· Accenture</span></h2>
+        <span class="exp-dates">Nov 2020 — Mar 2024</span>
+      </div>
+      <p class="exp-desc">
+        Developed and maintained Spring Batch and Spring MVC enterprise applications in Java. Led the migration of legacy Spring services to IBM WebSphere, automated CI/CD deployments, and designed telemetry-backed reporting pipelines for daily commission calculations.
+      </p>
+      <div class="exp-stats">
+        <div><span class="stat-num">99.9%</span>system uptime</div>
+        <div><span class="stat-num">50+</span>incidents resolved</div>
+        <div><span class="stat-num">5,000+</span>records / day</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">
+      <span>Technical</span>
+      <span class="count">04</span>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <p>Java · C# · SQL · TypeScript · JavaScript</p>
+      </div>
+      <div class="skill-group">
+        <h3>Frameworks</h3>
+        <p>Spring (Batch, MVC) · ASP.NET Core · Entity Framework · React · Angular · Node.js</p>
+      </div>
+      <div class="skill-group">
+        <h3>Data</h3>
+        <p>SQL Server · Oracle · MongoDB · REST · OpenAPI</p>
+      </div>
+      <div class="skill-group">
+        <h3>Tooling</h3>
+        <p>Docker · CI/CD · Azure · AWS · Git · Jira</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label">
+      <span>Contact</span>
+      <span class="count">05</span>
+    </div>
+
+    <div class="contact-card">
+      <h2>Let's build something together</h2>
+      <p>Open to full-stack and backend engineering roles in Vancouver or remote.</p>
+      <div class="contact-links">
+        <a href="mailto:sharmamahima174@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/mahimasharma1997/" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/mahima-bcit" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament">⁂</div>
+
+  <footer>
+    <span>© 2026 Mahima Sharma · Built with care</span>
+    <div class="links">
+      <a href="mailto:sharmamahima174@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/mahimasharma1997/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/mahima-bcit" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const root = document.documentElement;
+
+  const sunIcon = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>';
+  const moonIcon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    themeIcon.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+    try { localStorage.setItem('theme', theme); } catch (e) {}
+  }
+
+  let savedTheme = null;
+  try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+  themeToggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // Project expand/collapse
+  document.querySelectorAll('.project-summary').forEach(summary => {
+    const toggle = () => {
+      const project = summary.closest('.project');
+      const isExpanded = project.classList.toggle('expanded');
+      summary.setAttribute('aria-expanded', isExpanded);
+    };
+    summary.addEventListener('click', toggle);
+    summary.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
+
+  // Scroll-triggered section reveals
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
