@@ -956,6 +956,60 @@
         </div>
       </div>
     </article>
+
+    <article class="project" data-project="portfoliocms">
+      <div class="project-summary" tabindex="0" role="button" aria-expanded="false" aria-controls="portfoliocms-detail">
+        <div class="project-head">
+          <h2 class="project-title">
+            Portfolio CMS
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </h2>
+          <span class="project-year">2026</span>
+        </div>
+        <p class="project-desc">
+          A solo full-stack CMS for managing a developer portfolio. Three-tier role-based access control, image upload pipeline with safe-delete guards, and security audit logging across the entire request lifecycle.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">EJS</span>
+        </div>
+      </div>
+
+      <div class="project-detail" id="portfoliocms-detail">
+        <div class="detail-inner">
+          <div class="detail-block">
+            <h4>The challenge</h4>
+            <p>Build a full-featured CMS from scratch as a solo project: public browsing for portfolio visitors, authenticated admin CRUD for content management, and the kind of role hierarchy and audit trail you would expect in a real production application. No frameworks beyond Express; the architecture is mine end to end.</p>
+          </div>
+          <div class="detail-block">
+            <h4>My role</h4>
+            <p>Solo developer. Designed the data model, architected the role-based access control system, implemented the image upload pipeline with referential integrity guards, and built the audit logging layer that captures every access denial.</p>
+          </div>
+          <div class="detail-block">
+            <h4>What I built</h4>
+            <ul>
+              <li>25+ Express routes covering public browsing and admin CRUD for projects, skills, education, and experience</li>
+              <li>Four Mongoose models with relationships and validation</li>
+              <li>Three-tier role-based access control (USER, MODERATOR, ADMIN) with custom middleware</li>
+              <li>bcrypt password hashing and MongoDB session storage via connect-mongo</li>
+              <li>Multer-based image upload pipeline with safe-delete guards preventing deletion of referenced data</li>
+              <li>Security audit logging capturing timestamp, user ID, role, HTTP method, path, and IP on every access denial</li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h4>Key takeaways</h4>
+            <p>Solo full-stack work forced me to think about the whole system at once. The audit logging design in particular started as a small idea and grew into one of the cleanest parts of the codebase, because every access decision had to flow through one well-defined chokepoint. That clarity carried over into how I think about middleware in any Express app now.</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/mahima-bcit/portfolio-cms" target="_blank" rel="noopener">View repo</a>
+          </div>
+        </div>
+      </div>
+    </article>
   </section>
 
   <section>
@@ -970,12 +1024,12 @@
         <span class="exp-dates">Nov 2020 — Mar 2024</span>
       </div>
       <p class="exp-desc">
-        Developed and maintained Spring Batch and Spring MVC enterprise applications in Java. Led the migration of legacy Spring services to IBM WebSphere, automated CI/CD deployments, and designed telemetry-backed reporting pipelines for daily commission calculations.
+        Java developer on ING Bank Belgium's Finance & Risk platform, contributing across eight banking applications in a mixed architecture of Spring Batch jobs, monolithic services, and microservices. Built the Trailer Fees feature on the commissions platform, contributed to a Java 8 to Java 21 migration across the dependency tree, and owned remediation of jQuery XSS vulnerabilities identified by penetration testing.
       </p>
       <div class="exp-stats">
-        <div><span class="stat-num">99.9%</span>system uptime</div>
-        <div><span class="stat-num">50+</span>incidents resolved</div>
-        <div><span class="stat-num">5,000+</span>records / day</div>
+        <div><span class="stat-num">8</span>banking applications</div>
+        <div><span class="stat-num">3.5</span>years production Java</div>
+        <div><span class="stat-num">21</span>JDK version migrated to</div>
       </div>
     </div>
   </section>
